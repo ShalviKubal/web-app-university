@@ -1,0 +1,44 @@
+.login-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+.login-div form{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 500px;
+}
+.login-div form div{
+}
+.login-div div{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.login-div div label{
+    align-self: start;
+    display: flex;
+    flex: 1;
+}
+.login-div div input{
+    flex: 4;
+}
+.login-div div:first-child {
+    font-size: 32px;
+}
+@media only screen and (max-width: 600px) {
+    .login-div div {
+      flex-direction: column;
+    }
+    .login-div form{
+        flex-basis: 200px;
+    }
+    .login-div div:last-child {
+        flex-direction: row;
+    }
+}
