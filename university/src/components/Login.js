@@ -22,8 +22,8 @@ class Login extends Component {
                     <input type="submit" value="Sign In" />
                 </div>
                 <div>
-                    <NavLink to="/forgotpassword">Forgot Password?</NavLink>
-                    <NavLink to="/signup">Sign up</NavLink>
+                    <NavLink to="/forgotpassword" exact activeStyle="color : blue">Forgot Password?</NavLink>
+                    <NavLink to="/signup" exact activeStyle="color : blue">Sign up</NavLink>
                 </div>
             </form>
         </div>
