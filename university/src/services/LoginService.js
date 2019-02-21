@@ -12,17 +12,14 @@
     }
 }https://facebook.github.io/react-native/movies.json*/
 export default {
-    getItems: () => {
-        var data = { 'username' : 'shalvi'}; 
+    getItems: (data) => {
       return fetch('http://localhost:5555/login', {
         method: 'post',
         headers: {
          'Accept': 'application/json',
          'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-         username: 'shalvi'
-        })
+        body: JSON.stringify(data)
     });
     },
     otherApiCall: (params) => {
