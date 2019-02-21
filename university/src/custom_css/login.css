@@ -11,26 +11,17 @@
     flex-direction: column;
     flex-basis: 500px;
 }
-.login-div form div{
-}
-.login-div div{
-    margin-bottom: 10px;
+.input-group,
+.sign-in{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-.login-div div label{
-    align-self: start;
-    display: flex;
-    flex: 1;
-}
-.login-div div input{
-    flex: 4;
+    margin-bottom: 10px;
 }
 .login-div div input[type=text],
 .login-div div input[type=password]{
     width: 100%;
-    padding:20px 0px 0px 0px;
+    padding:10px 10px 10px 10px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -46,14 +37,24 @@
     border-radius: 4px;
     cursor: pointer;
   }
-.login-div div:first-child {
+.sign-in{
     font-size: 32px;
+}
+.input-div{
+    display:flex;
+    flex: 4;
+    align-items: center;
+}
+.input-label{
+    display: flex;
+    flex: 1;
+    align-items: center;
 }
 .login-div div input[type=submit]:hover {
     background-color:#1ab2ff;
 }
 @media only screen and (max-width: 600px) {
-    .login-div div {
+    .input-group {
       flex-direction: column;
     }
     .login-div form{
