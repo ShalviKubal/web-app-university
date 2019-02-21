@@ -4,6 +4,13 @@ import './../custom_css/profile.css';
 import DatePicker from 'react-date-picker';
 
 class Profile extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      date : new Date()
+    }
+  }
+  handleDateInput = date => this.setState({ date })
   render() {
     return (
       <div className='profile-div'>
@@ -19,7 +26,7 @@ class Profile extends Component {
           </div>
           <div className="input-group">                
               <div className="input-label"><label> Email </label></div>
-              <div className="input-div"><input  name="email"/></div>
+              <div className="input-div"><input  name="email" type="email"/></div>
           </div>
           <div className="input-group">                
               <div className="input-label"><label> Role </label></div>
@@ -27,7 +34,7 @@ class Profile extends Component {
           </div>
           <div className="input-group">                
               <div className="input-label"><label>Date of Birth </label></div>
-              <div className="input-div"><input type="password" name="verifypassword"/></div>
+              <DatePicker onChange={this.handleDateInput} value={this.state.date}/>
           </div>
           <div className="input-group">
             <input type="submit" value="Update"/>
