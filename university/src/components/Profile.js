@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './../custom_css/profile.css';
+import DatePicker from 'react-date-picker';
 
 class Profile extends Component {
   render() {

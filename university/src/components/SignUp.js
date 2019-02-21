@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './../custom_css/profile.css';
+import './../custom_css/signup.css';
 import { NavLink, Redirect } from 'react-router-dom';
 
 class SignUp extends Component {
