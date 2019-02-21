@@ -13,6 +13,7 @@
 }https://facebook.github.io/react-native/movies.json*/
 export default {
     getItems: (data) => {
+        console.log(data)
       return fetch('http://localhost:5555/login', {
         method: 'post',
         headers: {

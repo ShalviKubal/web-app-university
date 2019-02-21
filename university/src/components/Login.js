@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 
 import './../custom_css/login.css'
 import LoginService from './../services/LoginService';
@@ -12,28 +12,39 @@ class Login extends Component {
         this.handleLogin = this.handleLogin.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.state = {
-            username : '',
-            password : ''
+            data : { 
+                username : '',
+                password : ''
+            },
+            toDashboard: false,
         }
     }
     handleLogin(e){
         e.preventDefault();
-        this.setState(this.state);        
-        const items = LoginService.getItems(this.state);
+        //this.setState(this.state);        
+        const items = LoginService.getItems(this.state.data);
         items.then(res => res.json())
-        .then(response => console.log('Success:', JSON.stringify(response)))
+        .then(response => {
+            console.log('Success:', JSON.stringify(response));
+            const prevState = this.state;
+            prevState.toDashboard = true;
+            this.setState(prevState);
+        })
         .catch(error => console.error('Error:', error))
     }
     componentDidMount() {
 
     }
     handleChange(event){
-        const attribute = event.target.name
-        this.setState({
-            [attribute] : event.target.value
-        });
+        const attribute = event.target.name;
+        const prevState = this.state;
+        prevState.data[attribute] = event.target.value;
+        this.setState(prevState);
     }
     render() {
+        if (this.state.toDashboard === true) {
+            return <Redirect to='/dashboard' />
+        }
         return (
             <div className='login-div'>
                 <form>
