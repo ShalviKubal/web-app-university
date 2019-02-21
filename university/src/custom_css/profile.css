@@ -1,4 +1,4 @@
-.sign-up-div{
+.profile-div{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -6,20 +6,20 @@
     text-align: center;
     min-height: 100vh;
 }
-.sign-up-div form{
+.profile-div form{
     display: flex;
     flex-direction: column;
     flex-basis: 500px;
 }
 .input-group,
-.sign-up{
+.profile{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10px;
 }
-.sign-up-div div input[type=text],
-.sign-up-div div input[type=password]{
+.profile-div div input[type=text],
+.profile-div div input[type=password]{
     width: 100%;
     padding:10px 10px 10px 10px;
     display: inline-block;
@@ -27,7 +27,7 @@
     border-radius: 4px;
     box-sizing: border-box;
 }
-.sign-up-div div input[type=submit] {
+.profile-div div input[type=submit] {
     width: 100%;
     background-color: #0088cc;
     color: white;
@@ -37,7 +37,7 @@
     border-radius: 4px;
     cursor: pointer;
   }
-.sign-up{
+.profile{
     font-size: 32px;
 }
 .input-div{
@@ -51,17 +51,17 @@
     align-items: center;
     text-align: start;
 }
-.sign-up-div div input[type=submit]:hover {
+.profile-div div input[type=submit]:hover {
     background-color:#1ab2ff;
 }
 @media only screen and (max-width: 600px) {
     .input-group {
       flex-direction: column;
     }
-    .sign-up-div form{
+    .profile-div form{
         flex-basis: 200px;
     }
-    .sign-up-div div:last-child {
+    .profile-div div:last-child {
         flex-direction: row;
     }
 }
