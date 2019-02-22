@@ -21,7 +21,9 @@
 .profile-div div input[type=text],
 .profile-div div input[type=password],
 .profile-div div input[type=email],
-.react-date-picker__wrapper{
+.react-date-picker__wrapper,
+.react-phone-number-input,
+.select-role{
     width: 100%;
     padding:10px 10px 10px 10px;
     display: inline-block;
@@ -29,9 +31,21 @@
     border-radius: 4px;
     box-sizing: border-box;
 }
+.react-phone-number-input__phone,
+.react-phone-number-input__input{
+    font-size: small !important;
+    height: auto !important;
+    border: none !important;
+}
+.react-phone-number-input__icon-image{
+    margin-bottom: 5px;
+}
+.react-date-picker__inputGroup{
+    font-size: small;
+    border: none;
+}
 .profile-div div input[type=submit] {
     width: 100%;
-    background-color: #0088cc;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -54,8 +68,17 @@
     align-items: center;
     text-align: start;
 }
-.profile-div div input[type=submit]:hover {
-    background-color:#1ab2ff;
+.update-button {
+    background-color: #008000;
+}
+.profile-div div .update-button:hover {
+    background-color: #00b300;
+}
+.logout-button{
+    background-color: #b30000;
+}
+.profile-div div .logout-button:hover {
+    background-color: #ff0000;
 }
 @media only screen and (max-width: 600px) {
     .input-group {
