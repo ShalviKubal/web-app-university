@@ -5,14 +5,23 @@ import DatePicker from 'react-date-picker';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
+class ProfileUpdateSuccess extends Component {
+  render(){
+      return (             
+        <div className="profile-update-success"><label> Profile successfully saved </label></div>
+      );
+  }
+};
 class Profile extends Component {
   constructor(props){
     super(props);
     this.handleChangePhoneInput = this.handleChangePhoneInput.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.state = {
       date : new Date(),
       phone : '',
       roles : [ 'Faculty' , 'Student', 'Admin'],
+      showSuccess : false
     }
   }
   handleChangeDateInput = date => this.setState({ date })
@@ -21,12 +30,20 @@ class Profile extends Component {
        phone: value
     });
  }
+ handleUpdate(event){
+   event.preventDefault();
+   this.setState({
+     showSuccess: true
+   });
+ }
   render() {
     let optionItems = this.state.roles.map((role) => <option key={role}>{role}</option>);
+
     return (
       <div className='profile-div'>
       <form>
           <div className="profile"><label>Profile</label></div>
+          { this.state.showSuccess ? <ProfileUpdateSuccess /> : null }
           <div className="input-group">                
               <div className="input-label"><label> Username </label></div>
               <div className="input-div"><input type="text" name="username" disabled/></div>
@@ -42,7 +59,7 @@ class Profile extends Component {
           <div className="input-group">                
               <div className="input-label"><label> Role </label></div>
               <div className="input-div">             
-                <select class = "select-role">
+                <select className = "select-role">
                   {optionItems}
                 </select>
               </div>
@@ -52,7 +69,7 @@ class Profile extends Component {
               <DatePicker onChange={this.handleChangeDateInput} value={this.state.date}/>
           </div>
           <div className="input-group">
-            <input className = "update-button" type="submit" value="Update"/>
+            <input className = "update-button" type="submit" value="Update" onClick = {this.handleUpdate}/>
           </div>
           <div className="input-group">
             <input className = "logout-button" type="submit" value="Logout"/>
